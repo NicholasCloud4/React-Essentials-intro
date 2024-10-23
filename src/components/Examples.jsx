@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { EXAMPLES } from '../data';
 import TabButton from './TabButton';
+import Section from './Section';
 
 const Examples = () => {
     const [selectedTopic, setSelectedTopic] = useState("");
@@ -12,13 +13,13 @@ const Examples = () => {
         // console.log(selectedTopic);
     }
     return (
-        <section id="examples">
-            <h2>Examples</h2>
+        <Section title="Examples" id="examples">
+            <h2></h2>
             <menu>
-                <TabButton isSelected={selectedTopic === "components"} onSelect={() => handleButtonClick("components")}>COMPONENTS</TabButton>
-                <TabButton isSelected={selectedTopic === "jsx"} onSelect={() => handleButtonClick("jsx")}>JSX</TabButton>
-                <TabButton isSelected={selectedTopic === "props"} onSelect={() => handleButtonClick("props")}>PROPS</TabButton>
-                <TabButton isSelected={selectedTopic === "state"} onSelect={() => handleButtonClick("state")}>STATE</TabButton>
+                <TabButton isSelected={selectedTopic === "components"} onClick={() => handleButtonClick("components")}>COMPONENTS</TabButton>
+                <TabButton isSelected={selectedTopic === "jsx"} onClick={() => handleButtonClick("jsx")}>JSX</TabButton>
+                <TabButton isSelected={selectedTopic === "props"} onClick={() => handleButtonClick("props")}>PROPS</TabButton>
+                <TabButton isSelected={selectedTopic === "state"} onClick={() => handleButtonClick("state")}>STATE</TabButton>
             </menu>
 
             {/* Used turnery operator to check if selectedTopic is empty */}
@@ -32,7 +33,7 @@ const Examples = () => {
                         </code>
                     </pre>
                 </div>}
-        </section>
+        </Section>
     )
 }
 
